@@ -20,6 +20,7 @@
  *
  * @param[out] email   String buffer to store the email in.
  * @param[in]  emailsz Number of bytes in email.
+ * @retval void
  */
 static void
 load_test_email(char *const email,
@@ -45,6 +46,7 @@ load_test_email(char *const email,
 
 /**
  * Load the configuration file and send a single test email.
+ * @retval void
  */
 static void
 test_nossl_smtp(void){

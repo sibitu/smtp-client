@@ -195,6 +195,7 @@ smtp_ffile_get_contents(FILE *stream,
  * @param[in] mailx        Append the email address into this mailx context.
  * @param[in] address_type See @ref smtp_address_type.
  * @param[in] email        Email address to send to.
+ * @retval void
  */
 static void
 mailx_address_append(struct mailx *const mailx,
@@ -220,6 +221,7 @@ mailx_address_append(struct mailx *const mailx,
  * Send the email using the configuration options in the @p mailx context.
  *
  * @param[in] mailx Email context.
+ * @retval void
  */
 static void
 mailx_send(struct mailx *const mailx){
@@ -265,6 +267,7 @@ mailx_send(struct mailx *const mailx){
  * @param[in] mailx    Store the attachment details into this mailx context.
  * @param[in] filename File name to display to the recipient.
  * @param[in] path     Local path of file to attach.
+ * @retval void
  */
 static void
 mailx_append_attachment(struct mailx *const mailx,
@@ -298,6 +301,7 @@ mailx_append_attachment(struct mailx *const mailx,
  *
  * @param[in] mailx      Store the attachment details into this mailx context.
  * @param[in] attach_arg String with format: 'filename:filepath'.
+ * @retval void
  */
 static void
 mailx_append_attachment_arg(struct mailx *const mailx,
@@ -325,6 +329,7 @@ mailx_append_attachment_arg(struct mailx *const mailx,
  * @param[in] mailx  Store the results of the option parsing into the relevant
  *                   field in this mailx context.
  * @param[in] option String containing key/value option to parse.
+ * @retval void
  */
 static void
 mailx_parse_smtp_option(struct mailx *const mailx,
@@ -434,6 +439,7 @@ mailx_parse_smtp_option(struct mailx *const mailx,
  * See description of -S argument in main for more details.
  *
  * @param[in] mailx The mailx content to initialize.
+ * @retval void
  */
 static void
 mailx_init_default_values(struct mailx *const mailx){
@@ -447,6 +453,7 @@ mailx_init_default_values(struct mailx *const mailx){
  * Frees the allocated memory associated with the mailx context.
  *
  * @param[in] mailx The mailx context to free.
+ * @retval void
  */
 static void
 mailx_free(const struct mailx *const mailx){

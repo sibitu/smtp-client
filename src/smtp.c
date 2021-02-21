@@ -484,6 +484,7 @@ smtp_str_getdelimfd_set_line_and_buf(struct str_getdelimfd *const gdfd,
  * Free memory in the @ref str_getdelimfd data structure.
  *
  * @param[in] gdfd Frees memory stored in this socket parsing structure.
+ * @retval void
  */
 SMTP_LINKAGE void
 smtp_str_getdelimfd_free(struct str_getdelimfd *const gdfd){
@@ -787,6 +788,7 @@ static char g_base64_encode_table[] = {
  * @param[in]  buf_block_sz Number of bytes in buf to encode (min 1, max 3).
  * @param[out] b64          Pointer to buffer with at least 4 bytes for
  *                          storing the base64 encoded result.
+ * @retval void
  */
 static void
 smtp_base64_encode_block(const char *const buf,
@@ -1507,6 +1509,7 @@ smtp_parse_cmd_line(char *const line,
  * @param[in] smtp   SMTP client context.
  * @param[in] prefix Print this prefix before the main debug line text.
  * @param[in] str    Debug text to print out.
+ * @retval void
  */
 static void
 smtp_puts_dbg(struct smtp *const smtp,
@@ -2133,6 +2136,7 @@ smtp_auth_cram_md5(struct smtp *const smtp,
  *
  * @param[in] smtp    SMTP client context.
  * @param[in] seconds Timeout in seconds.
+ * @retval void
  */
 static void
 smtp_set_read_timeout(struct smtp *const smtp,
@@ -2381,6 +2385,7 @@ smtp_header_exists(const struct smtp *const smtp,
  * about preventing accidental boundary collisions.
  *
  * @param[out] boundary Buffer that has at least SMTP_MIME_BOUNDARY_LEN bytes.
+ * @retval void
  */
 static void
 smtp_gen_mime_boundary(char *const boundary){

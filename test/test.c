@@ -369,6 +369,7 @@ smtp_str_list_append(struct smtp_str_list *const slist,
  * Free all memory associated to the string list.
  *
  * @param[in] list The string list to free.
+ * @retval void
  */
 static void
 smtp_str_list_free(struct smtp_str_list *const list){
@@ -548,6 +549,7 @@ smtp_file_put_contents(const char *const filename,
  * too many failed login attempts.
  *
  * @param[in] seconds The number of seconds to pause execution.
+ * @retval void
  */
 static void
 smtp_test_sleep(unsigned int seconds){
@@ -565,6 +567,7 @@ smtp_test_sleep(unsigned int seconds){
  * @param[out] result        Memory location to store the result.
  * @param[in]  expect_result Expected result of adding @p a and @p b.
  * @param[in]  expect_wrap   Expectation on whether the addition will wrap.
+ * @retval void
  */
 static void
 smtp_unit_test_si_size_t(int (*si_fp)(const size_t a,
@@ -586,6 +589,7 @@ smtp_unit_test_si_size_t(int (*si_fp)(const size_t a,
 
 /**
  * Run all test cases for integer wrapping.
+ * @retval void
  */
 static void
 smtp_unit_test_all_si(void){
@@ -641,6 +645,7 @@ smtp_unit_test_all_si(void){
  * @param[in] buf            Null-terminated base64 string.
  * @param[in] expect_str     Decoded binary data.
  * @param[in] expect_str_len Length of @p expect_str.
+ * @retval void
  */
 static void
 smtp_unit_test_base64_decode(const char *const buf,
@@ -662,6 +667,7 @@ smtp_unit_test_base64_decode(const char *const buf,
 
 /**
  * Run all test cases for base64 decoding.
+ * @retval void
  */
 static void
 smtp_unit_test_all_base64_decode(void){
@@ -698,6 +704,7 @@ smtp_unit_test_all_base64_decode(void){
  * @param[in] buf    Binary data to encode in base64.
  * @param[in] buflen Number of bytes in the @p buf parameter.
  * @param[in] expect The expected base64 string that would get returned.
+ * @retval void
  */
 static void
 smtp_unit_test_base64_encode(const char *const buf,
@@ -717,6 +724,7 @@ smtp_unit_test_base64_encode(const char *const buf,
 
 /**
  * Run all test cases for base64 encoding.
+ * @retval void
  */
 static void
 smtp_unit_test_all_base64_encode(void){
@@ -754,6 +762,7 @@ smtp_unit_test_all_base64_encode(void){
  * @param[in] s      Buffer containing binary data to convert.
  * @param[in] slen   Number of bytes in @p s.
  * @param[in] expect Expected hex string output returned by @ref smtp_bin2hex.
+ * @retval void
  */
 static void
 smtp_unit_test_bin2hex(const char *const s,
@@ -773,6 +782,7 @@ smtp_unit_test_bin2hex(const char *const s,
 
 /**
  * Run all test cases for @ref smtp_bin2hex.
+ * @retval void
  */
 static void
 smtp_unit_test_all_bin2hex(void){
@@ -819,6 +829,7 @@ smtp_unit_test_all_bin2hex(void){
  * @param[in] init   Set the destination buffer to this initial string.
  * @param[in] s2     Concatenate this string into the destination buffer.
  * @param[in] expect Expected string result.
+ * @retval void
  */
 static void
 smtp_unit_test_stpcpy(const char *const init,
@@ -846,6 +857,7 @@ smtp_unit_test_stpcpy(const char *const init,
 
 /**
  * Run all test cases for @ref smtp_stpcpy.
+ * @retval void
  */
 static void
 smtp_unit_test_all_stpcpy(void){
@@ -870,6 +882,7 @@ smtp_unit_test_all_stpcpy(void){
  * @param[in] size         Size of each element in @p nmemb.
  * @param[in] expect_alloc Set to 0 if expecting NULL return, or set to any
  *                         other value when expecting successful allocation.
+ * @retval void
  */
 static void
 smtp_unit_test_reallocarray(void *ptr,
@@ -890,6 +903,7 @@ smtp_unit_test_reallocarray(void *ptr,
 
 /**
  * Run all test cases for @ref smtp_reallocarray.
+ * @retval void
  */
 static void
 smtp_unit_test_all_reallocarray(void){
@@ -911,6 +925,7 @@ smtp_unit_test_all_reallocarray(void){
  *
  * @param[in] s      String to duplicate.
  * @param[in] expect Expected string result.
+ * @retval void
  */
 static void
 smtp_unit_test_strdup(const char *const s,
@@ -929,6 +944,7 @@ smtp_unit_test_strdup(const char *const s,
 
 /**
  * Run all test cases for @ref smtp_strdup.
+ * @retval void
  */
 static void
 smtp_unit_test_all_strdup(void){
@@ -956,6 +972,7 @@ smtp_unit_test_all_strdup(void){
  * @param[in] replace Replace each instance of the search string with this.
  * @param[in] s       Null-terminated string to search and replace.
  * @param[in] expect  Expected result.
+ * @retval void
  */
 static void
 smtp_unit_test_str_replace(const char *const search,
@@ -976,6 +993,7 @@ smtp_unit_test_str_replace(const char *const search,
 
 /**
  * Run all tests for @ref smtp_str_replace.
+ * @retval void
  */
 static void
 smtp_unit_test_all_str_replace(void){
@@ -1023,6 +1041,7 @@ smtp_unit_test_all_str_replace(void){
 
 /**
  * Run all tests for @ref smtp_utf8_charlen.
+ * @retval void
  */
 static void
 smtp_unit_test_all_smtp_utf8_charlen(void){
@@ -1042,6 +1061,7 @@ smtp_unit_test_all_smtp_utf8_charlen(void){
 
 /**
  * Run all tests for @ref smtp_str_has_nonascii_utf8.
+ * @retval void
  */
 static void
 smtp_unit_test_all_smtp_str_has_nonascii_utf8(void){
@@ -1058,6 +1078,7 @@ smtp_unit_test_all_smtp_str_has_nonascii_utf8(void){
  * @param[in] s      UTF-8 string.
  * @param[in] maxlen Do not check more than @p maxlen bytes of string @p s.
  * @param[in] expect Expected string length.
+ * @retval void
  */
 static void
 smtp_unit_test_strnlen_utf8(const char *s,
@@ -1071,6 +1092,7 @@ smtp_unit_test_strnlen_utf8(const char *s,
 
 /**
  * Run all tests for @ref smtp_strnlen_utf8.
+ * @retval void
  */
 static void
 smtp_unit_test_all_strnlen_utf8(void){
@@ -1119,6 +1141,7 @@ smtp_unit_test_all_strnlen_utf8(void){
  * @param[in] s      String to fold.
  * @param[in] maxlen Number of bytes for each line in the string (soft limit).
  * @param[in] expect Expected folded string.
+ * @retval void
  */
 static void
 smtp_unit_test_fold_whitespace_get_offset(const char *const s,
@@ -1132,6 +1155,7 @@ smtp_unit_test_fold_whitespace_get_offset(const char *const s,
 
 /**
  * Run all tests for @ref smtp_fold_whitespace_get_offset.
+ * @retval void
  */
 static void
 smtp_unit_test_all_fold_whitespace_get_offset(void){
@@ -1248,6 +1272,7 @@ smtp_unit_test_all_fold_whitespace_get_offset(void){
  * @param[in] s      String to fold.
  * @param[in] maxlen Number of bytes for each line in the string (soft limit).
  * @param[in] expect Expected folded string.
+ * @retval void
  */
 static void
 smtp_unit_test_fold_whitespace(const char *const s,
@@ -1267,6 +1292,7 @@ smtp_unit_test_fold_whitespace(const char *const s,
 
 /**
  * Run all tests for @ref smtp_fold_whitespace.
+ * @retval void
  */
 static void
 smtp_unit_test_all_fold_whitespace(void){
@@ -1341,6 +1367,7 @@ smtp_unit_test_all_fold_whitespace(void){
  * @param[in] chunklen Number of bytes for each chunk in the string.
  * @param[in] end      Terminating string placed at the end of each chunk.
  * @param[in] expect   Expected chunk string.
+ * @retval void
  */
 static void
 smtp_unit_test_chunk_split(const char *const s,
@@ -1361,6 +1388,7 @@ smtp_unit_test_chunk_split(const char *const s,
 
 /**
  * Run all tests for @ref smtp_chunk_split.
+ * @retval void
  */
 static void
 smtp_unit_test_all_chunk_split(void){
@@ -1432,6 +1460,7 @@ smtp_unit_test_all_chunk_split(void){
  * @param[in] s      The string to write to the temp file before reading.
  * @param[in] nbytes Number of bytes in @p s.
  * @param[in] expect Expected string after reading the file.
+ * @retval void
  */
 static void
 smtp_unit_test_file_get_contents(const char *const s,
@@ -1452,6 +1481,7 @@ smtp_unit_test_file_get_contents(const char *const s,
 
 /**
  * Run all tests for @ref smtp_file_get_contents.
+ * @retval void
  */
 static void
 smtp_unit_test_all_file_get_contents(void){
@@ -1504,6 +1534,7 @@ smtp_unit_test_all_file_get_contents(void){
  * @param[in] expect_more Set to 1 if more lines will get returned or 0 if
  *                        no more lines.
  * @param[in] expect_text Expected text shown after the response code.
+ * @retval void
  */
 static void
 smtp_unit_test_parse_cmd_line(const char *const line,
@@ -1528,6 +1559,7 @@ smtp_unit_test_parse_cmd_line(const char *const line,
 
 /**
  * Run all tests for @ref smtp_parse_cmd_line.
+ * @retval void
  */
 static void
 smtp_unit_test_all_parse_cmd_line(void){
@@ -1567,6 +1599,7 @@ smtp_unit_test_all_parse_cmd_line(void){
  * @param[in] t         Force the time() function to return this time_t value.
  * @param[in] expect    Expected date string.
  * @param[in] expect_rc Expected return code.
+ * @retval void
  */
 static void
 smtp_unit_test_date_rfc_2822(time_t t,
@@ -1591,6 +1624,7 @@ smtp_unit_test_date_rfc_2822(time_t t,
 
 /**
  * Run all tests for @ref smtp_date_rfc_2822.
+ * @retval void
  */
 static void
 smtp_unit_test_all_date_rfc_2822(void){
@@ -1625,6 +1659,7 @@ smtp_unit_test_all_date_rfc_2822(void){
 
 /**
  * Run all tests for @ref smtp_address_validate_email.
+ * @retval void
  */
 static void
 smtp_unit_test_all_smtp_address_validate_email(void){
@@ -1639,6 +1674,7 @@ smtp_unit_test_all_smtp_address_validate_email(void){
 
 /**
  * Run all tests for @ref smtp_address_validate_name.
+ * @retval void
  */
 static void
 smtp_unit_test_all_smtp_address_validate_name(void){
@@ -1653,6 +1689,7 @@ smtp_unit_test_all_smtp_address_validate_name(void){
 
 /**
  * Run all tests for @ref smtp_attachment_validate_name.
+ * @retval void
  */
 static void
 smtp_unit_test_all_smtp_attachment_validate_name(void){
@@ -1668,6 +1705,7 @@ smtp_unit_test_all_smtp_attachment_validate_name(void){
 
 /**
  * Run all tests for @ref smtp_header_key_validate.
+ * @retval void
  */
 static void
 smtp_unit_test_all_smtp_header_key_validate(void){
@@ -1682,6 +1720,7 @@ smtp_unit_test_all_smtp_header_key_validate(void){
 
 /**
  * Run all tests for @ref smtp_header_value_validate.
+ * @retval void
  */
 static void
 smtp_unit_test_all_smtp_header_value_validate(void){
@@ -1697,6 +1736,7 @@ smtp_unit_test_all_smtp_header_value_validate(void){
  *
  * @param[in] status_code See @ref smtp_status_code.
  * @param[in] expect      Expected error string.
+ * @retval void
  */
 static void
 smtp_unit_test_smtp_status_code_errstr(enum smtp_status_code status_code,
@@ -1709,6 +1749,7 @@ smtp_unit_test_smtp_status_code_errstr(enum smtp_status_code status_code,
 
 /**
  * Run all tests for @ref smtp_status_code_errstr.
+ * @retval void
  */
 static void
 smtp_unit_test_all_smtp_status_code_errstr(void){
@@ -1773,6 +1814,7 @@ smtp_unit_test_getdelimfd_fp(struct str_getdelimfd *const gdfd,
  * @param[in] null_fp       If set, use a NULL read function pointer. Useful
                             for testing that error condition.
  * @param[in] expect_pieces Expected list of strings parsed from the file.
+ * @retval void
  */
 static void
 smtp_unit_test_str_getdelimfd(const char *const input_string,
@@ -1845,6 +1887,7 @@ smtp_unit_test_str_getdelimfd(const char *const input_string,
  * @param[in] copy_len      Number of bytes to copy to the internal line buffer.
  * @param[in] expect_result Expected result code (0 or -1) from
  *                          @ref smtp_str_getdelimfd_set_line_and_buf.
+ * @retval void
  */
 static void
 smtp_unit_test_getdelimfd_set_line_and_buf(struct str_getdelimfd *const gdfd,
@@ -1858,6 +1901,7 @@ smtp_unit_test_getdelimfd_set_line_and_buf(struct str_getdelimfd *const gdfd,
 
 /**
  * Run all tests for @ref smtp_str_getdelimfd.
+ * @retval void
  */
 static void
 smtp_unit_test_all_str_getdelimfd(void){
@@ -2036,6 +2080,7 @@ smtp_unit_test_all_str_getdelimfd(void){
 
 /**
  * Unit test functions which do not require an SMTP client context.
+ * @retval void
  */
 static void
 smtp_unit_test_all(void){
@@ -2167,6 +2212,7 @@ smtp_test_config_load_from_file(const char *const config_path){
  * @param[in] user          Username.
  * @param[in] pass          Password.
  * @param[in] expect_status Expected return code from @ref smtp_auth.
+ * @retval void
  */
 static void
 smtp_auth_check(const enum smtp_authentication_method auth_method,
@@ -2184,6 +2230,7 @@ smtp_auth_check(const enum smtp_authentication_method auth_method,
  * @param[in] email         Email address.
  * @param[in] name          Name corresponding to @p email.
  * @param[in] expect_status Expected return code from @ref smtp_address_add.
+ * @retval void
  */
 static void
 smtp_address_add_check(const enum smtp_address_type type,
@@ -2200,6 +2247,7 @@ smtp_address_add_check(const enum smtp_address_type type,
  * @param[in] key           Key name for new header.
  * @param[in] value         Value for new header.
  * @param[in] expect_status Expected return code from @ref smtp_header_add.
+ * @retval void
  */
 static void
 smtp_header_add_check(const char *const key,
@@ -2214,6 +2262,7 @@ smtp_header_add_check(const char *const key,
  *
  * @param[in] body          Email body text.
  * @param[in] expect_status Expected return code from @ref smtp_mail.
+ * @retval void
  */
 static void
 smtp_mail_check(const char *const body,
@@ -2226,6 +2275,7 @@ smtp_mail_check(const char *const body,
  * Call @ref smtp_close and check the result.
  *
  * @param[in] expect_status Expected return code from @ref smtp_close.
+ * @retval void
  */
 static void
 smtp_close_check(const enum smtp_status_code expect_status){
@@ -2239,6 +2289,7 @@ smtp_close_check(const enum smtp_status_code expect_status){
  * Uses default connection and flag parameters and ensures the return status
  * gets set to SMTP_STATUS_OK. Adds the FROM, TO, and CC email addresses
  * given in the config file. This function should always succeed.
+ * @retval void
  */
 static void
 test_smtp_open_default(void){
@@ -2274,6 +2325,7 @@ test_smtp_open_default(void){
 
 /**
  * Test the @ref smtp_status_code_get function.
+ * @retval void
  */
 static void
 smtp_func_test_all_status_code_get(void){
@@ -2309,6 +2361,7 @@ smtp_func_test_all_status_code_get(void){
  * @param[in] cafile              Path to certificate file.
  * @param[in] subject             Email subject line.
  * @param[in] body                Email body.
+ * @retval void
  */
 static void
 smtp_func_test_send_email(const char *const port,
@@ -2351,6 +2404,7 @@ smtp_func_test_send_email(const char *const port,
  * @param[in] server_port          Server port number to connect to.
  * @param[in] con_security         See @ref smtp_connection_security.
  * @param[in] security_description Description of @p connection_security.
+ * @retval void
  */
 static void
 smtp_func_test_connection_security(const char *const server_port,
@@ -2375,6 +2429,7 @@ smtp_func_test_connection_security(const char *const server_port,
 /**
  * Run through all types of SMTP connections provided in the
  * @ref smtp_connection_security.
+ * @retval void
  */
 static void
 smtp_func_test_all_connection_security(void){
@@ -2392,6 +2447,7 @@ smtp_func_test_all_connection_security(void){
 /**
  * Send a test email with a self-signed certificate file specified in the
  * cafile parameter.
+ * @retval void
  */
 static void
 smtp_func_test_all_cafile(void){
@@ -2409,6 +2465,7 @@ smtp_func_test_all_cafile(void){
  *
  * @param[in] auth_method      See @ref smtp_authentication_method.
  * @param[in] auth_description Description of @p auth_method.
+ * @retval void
  */
 static void
 smtp_func_test_auth(enum smtp_authentication_method auth_method,
@@ -2432,6 +2489,7 @@ smtp_func_test_auth(enum smtp_authentication_method auth_method,
 /**
  * Run through all types of SMTP authentication methods provided in the
  * @ref smtp_authentication_method.
+ * @retval void
  */
 static void
 smtp_func_test_all_auth_methods(void){
@@ -2448,6 +2506,7 @@ smtp_func_test_all_auth_methods(void){
  * @param[in] path        Local file path to use as the attachment.
  * @param[in] expect_rc   Expected return code for the attachment function
  *                        and every function after that.
+ * @retval void
  */
 static void
 smtp_func_test_attachment_path(const char *const name,
@@ -2496,6 +2555,7 @@ smtp_func_test_attachment_path(const char *const name,
  * @param[in] path        Local file path to use as the attachment.
  * @param[in] expect_rc   Expected return code for the attachment function
  *                        and every function after that.
+ * @retval void
  */
 static void
 smtp_func_test_attachment_fp(const char *const name,
@@ -2545,6 +2605,7 @@ smtp_func_test_attachment_fp(const char *const name,
  * Test harness for @ref smtp_attachment_add_mem.
  *
  * @param[in] num_attachment Number of attachments to send.
+ * @retval void
  */
 static void
 smtp_func_test_attachment_mem(size_t num_attachment){
@@ -2605,6 +2666,7 @@ smtp_func_test_attachment_mem(size_t num_attachment){
  * Send multiple PDF attachments.
  *
  * @param[in] num_attachments Number of attachments to send.
+ * @retval void
  */
 static void
 smtp_func_test_attachment_pdf(const size_t num_attachments){
@@ -2652,6 +2714,7 @@ smtp_func_test_attachment_pdf(const size_t num_attachments){
 
 /**
  * Test sending long text attachments.
+ * @retval void
  */
 static void
 smtp_func_test_attachment_long_text(void){
@@ -2702,6 +2765,7 @@ smtp_func_test_attachment_long_text(void){
 
 /**
  * Run all tests for @ref smtp_attachment_add_mem.
+ * @retval void
  */
 static void
 smtp_func_test_all_attachments_mem(void){
@@ -2719,6 +2783,7 @@ smtp_func_test_all_attachments_mem(void){
 
 /**
  * Run all tests for @ref smtp_attachment_add_path.
+ * @retval void
  */
 static void
 smtp_func_test_all_attachments_path(void){
@@ -2735,6 +2800,7 @@ smtp_func_test_all_attachments_path(void){
 
 /**
  * Run all tests for @ref smtp_attachment_add_fp.
+ * @retval void
  */
 static void
 smtp_func_test_all_attachments_fp(void){
@@ -2745,6 +2811,7 @@ smtp_func_test_all_attachments_fp(void){
 
 /**
  * Test different ways of loading file attachments onto an SMTP context.
+ * @retval void
  */
 static void
 smtp_func_test_all_attachments(void){
@@ -2755,6 +2822,7 @@ smtp_func_test_all_attachments(void){
 
 /**
  * Test multiple ways of sending to different recipients.
+ * @retval void
  */
 static void
 smtp_func_test_all_address(void){
@@ -2890,6 +2958,7 @@ smtp_func_test_all_address(void){
 /**
  * Test different methods of adding names to emails when calling
  * @ref smtp_address_add.
+ * @retval void
  */
 static void
 smtp_func_test_all_names(void){
@@ -3015,6 +3084,7 @@ smtp_func_test_all_names(void){
  *
  * This should override the default date implementation which uses the current
  * local date.
+ * @retval void
  */
 static void
 smtp_func_test_header_custom_date(void){
@@ -3056,6 +3126,7 @@ smtp_func_test_header_custom_date(void){
  * Test scenario where the caller provides a NULL value for a header.
  *
  * This should prevent that header from generating in the email.
+ * @retval void
  */
 static void
 smtp_func_test_header_null_no_date(void){
@@ -3093,6 +3164,7 @@ smtp_func_test_header_null_no_date(void){
 
 /**
  * Test sending long headers.
+ * @retval void
  */
 static void
 smtp_func_test_header_long(void){
@@ -3135,6 +3207,7 @@ smtp_func_test_header_long(void){
 
 /**
  * Test multiple ways of sending to different headers.
+ * @retval void
  */
 static void
 smtp_func_test_all_headers(void){
@@ -3145,6 +3218,7 @@ smtp_func_test_all_headers(void){
 
 /**
  * Test different scenarios with email bodies.
+ * @retval void
  */
 static void
 smtp_func_test_all_body(void){
@@ -3184,6 +3258,7 @@ smtp_func_test_all_body(void){
 
 /**
  * Manipulate the number of bytes sent over the network at a time.
+ * @retval void
  */
 static void
 smtp_func_test_all_write(void){
@@ -3201,6 +3276,7 @@ smtp_func_test_all_write(void){
 
 /**
  * Send a test email with debug mode disabled.
+ * @retval void
  */
 static void
 smtp_func_test_all_nodebug(void){
@@ -3236,6 +3312,7 @@ smtp_func_test_all_nodebug(void){
 
 /**
  * Send an HTML email.
+ * @retval void
  */
 static void
 smtp_func_test_html(void){
@@ -3298,6 +3375,7 @@ smtp_func_test_html(void){
 
 /**
  * Send an HTML email with a plaintext fallback.
+ * @retval void
  */
 static void
 smtp_func_test_html_with_plaintext(void){
@@ -3368,6 +3446,7 @@ smtp_func_test_html_with_plaintext(void){
 
 /**
  * Send HTML emails, overriding the Content-Type.
+ * @retval void
  */
 static void
 smtp_func_test_all_html(void){
@@ -3378,6 +3457,7 @@ smtp_func_test_all_html(void){
 /**
  * Test failure or error conditions not covered by any of the other failure
  * tests.
+ * @retval void
  */
 static void
 test_failure_misc(void){
@@ -3408,6 +3488,7 @@ test_failure_misc(void){
 
 /**
  * Test failure points in the @ref smtp_open function.
+ * @retval void
  */
 static void
 test_failure_open(void){
@@ -3701,6 +3782,7 @@ test_failure_open(void){
 /**
  * Test different error results in the address functions, including memory
  * allocation failures.
+ * @retval void
  */
 static void
 test_failure_address_add(void){
@@ -3775,6 +3857,7 @@ test_failure_address_add(void){
 /**
  * Test different error results in the attachment functions, including memory
  * allocation failures.
+ * @retval void
  */
 static void
 test_failure_attachment_add(void){
@@ -3899,6 +3982,7 @@ test_failure_attachment_add(void){
 /**
  * Test different error results in the @ref smtp_header_add function,
  * including memory allocation failures.
+ * @retval void
  */
 static void
 test_failure_header_add(void){
@@ -3951,6 +4035,7 @@ test_failure_header_add(void){
 
 /**
  * Test different error results @ref smtp_status_code_set function.
+ * @retval void
  */
 static void
 test_failure_status_code_set(void){
@@ -3979,6 +4064,7 @@ test_failure_status_code_set(void){
 
 /**
  * Test different error conditions in the @ref smtp_mail function.
+ * @retval void
  */
 static void
 test_failure_mail(void){
@@ -4256,6 +4342,7 @@ test_failure_mail(void){
 
 /**
  * Test different error conditions in the @ref smtp_close function.
+ * @retval void
  */
 static void
 test_failure_close(void){
@@ -4305,6 +4392,7 @@ test_failure_close(void){
 /**
  * Test different error results in the auth functions, including memory
  * allocation failures and invalid credentials.
+ * @retval void
  */
 static void
 test_failure_auth(void){
@@ -4715,6 +4803,7 @@ test_failure_auth(void){
 
 /**
  * Simulate a timeout when reading server response.
+ * @retval void
  */
 static void
 test_failure_timeout(void){
@@ -4740,6 +4829,7 @@ test_failure_timeout(void){
 
 /**
  * Test multiple failure modes when using the high-level interfaces.
+ * @retval void
  */
 static void
 test_all_failure_modes(void){
@@ -4763,6 +4853,7 @@ test_all_failure_modes(void){
  *   - Different combinations of connection and authentication methods.
  *   - Multiple attachments.
  *   - Multiple recipients
+ * @retval void
  */
 static void
 smtp_func_test_server_postfix(void){
@@ -4791,6 +4882,7 @@ smtp_func_test_server_postfix(void){
 
 /**
  * Open and close a connection to secureserver.net.
+ * @retval void
  */
 static void
 smtp_func_test_server_secureserver(void){
@@ -4830,6 +4922,7 @@ smtp_func_test_server_secureserver(void){
 
 /**
  * Send attachment to test gmail account.
+ * @retval void
  */
 static void
 smtp_func_test_gmail_attachment(void){
@@ -4877,6 +4970,7 @@ smtp_func_test_gmail_attachment(void){
  *
  * This only sends one email using a test gmail account. Most of the tests
  * have been designed to work with a local postfix server instance.
+ * @retval void
  */
 static void
 smtp_func_test_server_gmail(void){
@@ -4899,6 +4993,7 @@ smtp_func_test_server_gmail(void){
 
 /**
  * Run through all functional/integration tests for each test SMTP server.
+ * @retval void
  */
 static void
 smtp_func_test_all(void){
